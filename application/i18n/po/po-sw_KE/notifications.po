@@ -1,0 +1,91 @@
+# 
+# Translators:
+# Mutie Mule <jmutie09@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: Ushahidi-Localizations\n"
+"Report-Msgid-Bugs-To: http://github.com/ushahidi/Ushahidi-Localizations/issues\n"
+"POT-Creation-Date: 2012-10-18 12:05+0000\n"
+"PO-Revision-Date: 2012-09-03 18:57+0000\n"
+"Last-Translator: Mutie Mule <jmutie09@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sw_KE\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: ushahidi-i18n-manager\n"
+
+#: notifications.admin_footer
+msgctxt "notifications.admin_footer"
+msgid "This message was sent from your website."
+msgstr "Ujumbe huu ulitumwa kutoka kwa tovuti yako"
+
+#: notifications.admin_login_url
+msgctxt "notifications.admin_login_url"
+msgid "Administrator Login"
+msgstr "Kiingilizi cha meneja"
+
+#: notifications.admin_new_comment.message
+msgctxt "notifications.admin_new_comment.message"
+msgid "A new comment has been submitted to your website in response to:"
+msgstr "Fikira mpya zimeletwa kwa tovuti yako kutokana na:"
+
+#: notifications.admin_new_comment.subject
+msgctxt "notifications.admin_new_comment.subject"
+msgid "New Comment"
+msgstr "Maoni mapya"
+
+#: notifications.admin_new_email.message
+msgctxt "notifications.admin_new_email.message"
+msgid "A new email message has been submitted to your website."
+msgstr "Ujumbe mpya kutoka kwa simu ya rununu umeletwa kwa tovuti yako."
+
+#: notifications.admin_new_email.subject
+msgctxt "notifications.admin_new_email.subject"
+msgid "New Email Message"
+msgstr "Ujumbe mpya kutoka kwa barua pepe"
+
+#: notifications.admin_new_report.message
+msgctxt "notifications.admin_new_report.message"
+msgid "A new report has been submitted to your website."
+msgstr "Repoti mpya imetumwa kwa tovuti yako."
+
+#: notifications.admin_new_report.subject
+msgctxt "notifications.admin_new_report.subject"
+msgid "New Report"
+msgstr "Repoti mpya"
+
+#: notifications.admin_new_sms.message
+msgctxt "notifications.admin_new_sms.message"
+msgid "A new text message has been submitted to your website."
+msgstr "Ujumbe mpya kutoka kwa simu ya rununu umeletwa kwa tovuti yako."
+
+#: notifications.admin_new_sms.subject
+msgctxt "notifications.admin_new_sms.subject"
+msgid "New Text Message"
+msgstr "Ujumbe mpya kutoka kwa simu ya rununu"
+
+#: notifications.member_new_alert.message
+msgctxt "notifications.member_new_alert.message"
+msgid "You Have Received a New Alert"
+msgstr "Umepokea tahadhari mpya"
+
+#: notifications.member_new_alert.subject
+msgctxt "notifications.member_new_alert.subject"
+msgid "New Alert!"
+msgstr "Tahadhari mpya!"
+
+#: notifications.member_new_message.message
+msgctxt "notifications.member_new_message.message"
+msgid "You Have Received a Private Message"
+msgstr "Umepokea ujumbe wa kibinafsi"
+
+#: notifications.member_new_message.subject
+msgctxt "notifications.member_new_message.subject"
+msgid "New Private Message"
+msgstr "Ujumbe mpya wa kibinafsi"
+
+#: notifications.member_new_message.footer
+msgctxt "notifications.member_new_message.footer"
+msgid "To Reply Please Go To: "
+msgstr "Ili kujibu tafadhali nenda"
