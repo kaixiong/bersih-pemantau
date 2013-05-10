@@ -119,7 +119,7 @@
 			</div><!--tomat-->
 
 			<!--<div id="lapor">
-			<a href="reports/submit/#mainmiddle">Hantar Aduan</a>
+			<a href="<?php echo url::site('reports/submit/#mainmiddle'); ?>">Hantar Aduan</a>
 			</div><!--lapor-->
 
 			<!--<div id="sitemsg">
@@ -160,7 +160,7 @@
 				<li style="background:yellow;color:#000">
 					<div id="icon-form" class="icon"></div>
 					<div class="caption">
-						<a style="color:#000" href="reports/submit"><span>Hantar aduan</span></a>
+						<a style="color:#000" href="<?php echo url::site('reports/submit'); ?>"><span>Hantar aduan</span></a>
 						online form
 					</div>
 				</li>
