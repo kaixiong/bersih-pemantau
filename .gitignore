@@ -2,6 +2,9 @@
 .#*
 *~
 *.DS_Store
+.apache/*.log
+.apache/log
+.apache/pid
 application/logs/*
 application/cache/*
 media/uploads/*
@@ -10,3 +13,4 @@ application/config/config.php
 application/config/database.php
 application/config/encryption.php
 tests/phpunit/phpunit.xml
+
