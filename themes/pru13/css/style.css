@@ -1547,6 +1547,13 @@ a.show-more {
     margin-bottom:15px;
 }
 
+.big-block .page_text > ol{
+	padding-left: 20px;
+}
+.big-block .page_text ol li{
+	list-style: decimal;
+}
+
 /*---alerts-block---*/
 .step-1 {
     float:left;
