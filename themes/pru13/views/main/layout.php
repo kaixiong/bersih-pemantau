@@ -126,11 +126,11 @@
 				</div>
 
 				<ul id="social">
-					<li><a href="http://twitter.com/jompantau" class="twitter">Twitter</a></li>
-					<li><a href="http://www.facebook.com/JomPantau" class="facebook">Facebook</a></li>
-					<li><a href="<?php echo url::site(); ?>feed/" class="rss">RSS</a></li>
-					<li><a href="http://www.youtube.com/user/jompantau" class="yt">Youtube</a></li>
-					<li><a href="http://pinterest.com/jompantau/" class="ptr">Pinterest</a></li>
+					<li><a target="_blank" href="https://twitter.com/jompantau" class="twitter">Twitter</a></li>
+					<li><a target="_blank" href="https://facebook.com/JomPantau" class="facebook">Facebook</a></li>
+					<li><a target="_blank" href="<?php echo url::site(); ?>feed/" class="rss">RSS</a></li>
+					<li><a target="_blank" href="https://youtube.com/user/jompantau" class="yt">Youtube</a></li>
+					<li><a target="_blank" href="https://pinterest.com/jompantau/" class="ptr">Pinterest</a></li>
 				</ul>
 
 				<?php
@@ -156,7 +156,7 @@
 				</div>
 
 		<div style="float:left;width:300px;margin-left:10px;">
-			<p style="font-weight:bold;background:url(themes/default/images/1366383429_twitter.gif) no-repeat 0 50%;padding-left:20px;">Jom Pantau Tweets</p>
+			<p style="font-weight:bold;background:url(themes/default/images/twitter.gif) no-repeat 0 50%;padding-left:20px;">Jom Pantau Tweets</p>
 <?php
 
 			$hashtag = "jompantau";
