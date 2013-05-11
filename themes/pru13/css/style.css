@@ -482,6 +482,7 @@ div#mainmenu .caption {
 	background-position: -150px 0px;
 	width: 36px;
 	height: 32px;
+	float:left
 }
 #icon-form {
 	background-position: -50px -45px;
