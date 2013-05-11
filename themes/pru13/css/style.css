@@ -1543,15 +1543,30 @@ a.show-more {
     color:#990000;
 }
 
-.big-block .page_text p{
-    margin-bottom:15px;
+/* Page text */
+
+.page_text p {
+    margin-bottom: 1em;
 }
 
-.big-block .page_text > ol{
-	padding-left: 20px;
+/* Unordered lists */
+.page_text ul {
+    padding-left: 2em;
+    margin-bottom: 1em;
 }
-.big-block .page_text ol li{
-	list-style: decimal;
+.page_text ul li {
+    list-style: disc;
+    margin-bottom: 0.2em;
+}
+
+/* Ordered lists */
+.page_text ol {
+    padding-left: 2em;
+    margin-bottom: 1em;
+}
+.page_text ol li {
+    list-style: decimal;
+    margin-bottom: 0.2em;
 }
 
 /*---alerts-block---*/
