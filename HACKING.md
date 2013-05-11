@@ -8,9 +8,13 @@ Running Development Instance
 
 Use the command below, please also look into.`apache/config`:
 
-    apache2 -k start -f .apache/config -d . -e debug -X
+    apache2 -f .apache/config -d . -e debug -X -k start
 
-If you use PHP >=5.4:
+Or with custom port:
+
+    PORT=<PORT>; FILE=$RANDOM; cat .apache/config | sed -e s/11180/$PORT/g > /tmp/$FILE; apache2 -f /tmp/$FILE -d . -e debug -X -k start
+
+If you use PHP >=5.4, you should know this:
 
     php -S <BIND_IP>:<BIND_PORT>
 
