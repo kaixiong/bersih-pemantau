@@ -409,9 +409,36 @@ class Reports_Controller extends Main_Controller {
 		}
 		$this->themes->js->geometries = $form['geometry'];
 
+		$result = $this->db->query('SELECT * FROM `parliament_seats`');
+		foreach ($result as $row) {
+            $parliament_seats[$row->id] = $row;
+		}
+		$this->themes->js->parliament_seats = json_encode($parliament_seats);
+
+		$this->template->content->parliament_seats = $parliament_seats;
 	}
 
-	 /**
+	public function state_seats($id = FALSE)
+	{
+		$this->template = "";
+		$this->auto_render = false;
+
+		header('Content-type: application/json; charset=utf-8');
+
+		if (!$id) {
+			echo json_encode(array("status"=>"error", "message"=>"Parliament seat code not specified"));
+			return;
+		}
+
+		$state_seats = array();
+		$result = $this->db->query('SELECT `id`, `name`, `latitude`, `longitude` FROM `state_seats` WHERE `parliament_id` = ?', $id);
+		foreach ($result as $row) {
+			$state_seats[$row->id] = $row;
+		}
+		echo json_encode($state_seats);
+	}
+
+	/**
 	 * Displays a report.
 	 * @param boolean $id If id is supplied, a report with that id will be
 	 * retrieved.

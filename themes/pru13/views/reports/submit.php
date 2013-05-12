@@ -149,12 +149,21 @@
 				</div>
 			</div>
 			<div class="report_right">
-				<?php if (count($cities) > 1): ?>
 				<div class="report_row">
-					<h4><?php echo Kohana::lang('ui_main.reports_find_location'); ?></h4>
-					<?php print form::dropdown('select_city',$cities,'', ' class="select" '); ?>
+					<h4><?php echo 'Parliament Seat'; ?></h4>
+					<?php
+					$parliament_seat_entries = array(''=>'Select a Parliamentary Seat');
+					foreach ($parliament_seats as $id => $seat) {
+						$parliament_seat_entries[$seat->id] = $seat->id . ' - ' . $seat->name . ', ' . $seat->state;
+					}
+					print form::dropdown(array('name'=>'select_parliament_seat', 'class'=>'select'), $parliament_seat_entries);
+					?>
 				</div>
-				<?php endif; ?>
+				<div class="report_row">
+					<h4><?php echo 'State Seat'; ?></h4>
+					<?php print form::dropdown(array('name'=>'select_state_seat', 'class'=>"select"), array(''=>'Select a State Seat')); ?>
+				</div>
+
 				<div class="report_row">
 					<div id="divMap" class="report_map">
 						<div id="geometryLabelerHolder" class="olControlNoSelect">

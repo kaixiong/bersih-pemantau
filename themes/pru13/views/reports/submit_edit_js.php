@@ -945,3 +945,85 @@
 				}
 			});
 		}
+
+		$().ready(function() {
+			var parliamentSeatSelect = $('#select_parliament_seat');
+			var stateSeatSelect = $('#select_state_seat');
+			var pollingCentreSelect = $('#select_polling_centre');
+
+			var parliamentSeats = <?php echo $parliament_seats; ?>;
+			var stateSeats = null;
+
+			function loadStateSeats(parliamentSeatID) {
+				stateSeatSelect.empty().append($('<option/>').val('').text('Select a State Seat'));
+				stateSeats = null;
+
+				if (parliamentSeatID != '') {
+					$.getJSON('state_seats/'+parliamentSeatID, function(data) {
+						stateSeats = data;
+						$.each(data, function(index, entry) {
+							stateSeatSelect.append($('<option/>').val(entry.id).text(entry.id + ' - ' + entry.name));
+						});
+					});
+				}
+			}
+
+			function loadPollingCentres(parliamentSeatID, stateSeatID) {
+				pollingCentreSelect.empty().append($('<option/>').val('').text('Select a Voting Centre'));
+
+				$.getJSON('polling_centres/'+parliamentSeatID+','+stateSeatID, function(data) {
+					$.each(data, function(index, entry) {
+						pollingCentreSelect.append($('<option/>').val(entry.id).text(entry.id + ' - ' + entry.name));
+					});
+				});
+			}
+
+			function setMapLocation(longitude, latitude) {
+				var lonlat = [longitude, latitude];
+
+				// Clear the map first
+				vlayer.removeFeatures(vlayer.features);
+				$('input[name="geometry[]"]').remove();
+
+				point = new OpenLayers.Geometry.Point(lonlat[0], lonlat[1]);
+				OpenLayers.Projection.transform(point, proj_4326, proj_900913);
+
+				f = new OpenLayers.Feature.Vector(point);
+				vlayer.addFeatures(f);
+
+				// create a new lat/lon object
+				myPoint = new OpenLayers.LonLat(lonlat[0], lonlat[1]);
+				myPoint.transform(proj_4326, map.getProjectionObject());
+
+				// display the map centered on a latitude and longitude
+				map.panTo(myPoint);
+
+				// Update form values (jQuery)
+				//$("#location_name").attr("value", $('#select_city :selected').text());
+
+				$("#latitude").attr("value", lonlat[1]);
+				$("#longitude").attr("value", lonlat[0]);
+			}
+
+			parliamentSeatSelect.change(function() {
+				var seatID = $(this).val();
+				var seat;
+
+				if (seatID != '') {
+					seat = parliamentSeats[seatID];
+					setMapLocation(seat.longitude, seat.latitude);
+
+					loadStateSeats(seatID);
+				}
+			});
+
+			stateSeatSelect.change(function() {
+				var seatID = $(this).val();
+				var seat;
+
+				if (stateSeats != null && seatID != '') {
+					seat = stateSeats[seatID];
+					setMapLocation(seat.longitude, seat.latitude);
+				}
+			});
+		});
