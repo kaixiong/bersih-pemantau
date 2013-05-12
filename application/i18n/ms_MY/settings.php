@@ -92,6 +92,7 @@ $lang = array(
 	'facebook' => array(
 		'title' => 'Facebook Setup Options',
 		'description' => 'To get the information below you will need to create a new Facebook application at',
+		'description_2' => 'These settings allow users to login via Facebook, this <strong>does not</strong> create a facebook application for your deployment',
 		'app_id' => 'Facebook App ID',
 		'app_secret' => 'Facebook App Secret',
 	) ,
@@ -171,6 +172,11 @@ $lang = array(
 		'twitter_configuration' => 'Twitter Search Terms',
 		'twitter_hashtags' => 'Hashtags - Separate with commas ',
 	) ,
+	'banner_image' => array(
+		'type' => 'The Site Banner field does not appear to contain a valid image. The only accepted formats are .JPG, .PNG and .GIF.',
+		'size' => 'Please ensure that "Banner Image" size is less than 250 KB.',
+		'valid' => 'The "Banner Image" field does not appear to contain a valid file.',
+	) ,
 	'site_email' => array(
 		'email' => 'The site email field does not appear to contain a valid email address.',
 		'length' => 'The site email field must be at least 4 and no more 100 characters long.',
@@ -191,12 +197,12 @@ $lang = array(
 		'clickatell_text_1' => 'Sign up for Clickatells service by <a href="https://www.clickatell.com/central/user/client/step1.php?prod_id=2" target="_blank">clicking here</a>',
 		'clickatell_text_2' => 'Enter your Clickatell access information below',
 		'clickatell_username' => 'Your Clickatell User Name',
-		'flsms_description' => 'FrontlineSMS is free open source software that turns a laptop and a mobile phone into a central communications hub. Once installed, the program enables users to send and receive text messages with large groups of people through mobile phones. Click on the grey box to request a download from FrontlineSMS.com',
-		'flsms_download' => 'Download Frontline SMS and install it on your computer',
-		'flsms_instructions' => 'Messages received into a FrontlineSMS hub can be synched with Ushahidi. Detailed instructions on how to sync can be found <strong><a href="http://wiki.ushahidi.com/display/WIKI/How+to+Set-up+FrontlineSMS+and+Ushahidi" target="_blank">here</a></strong>. You will require the key and link below to set up the sync with FrontlineSMS',
-		'flsms_key' => 'Your Ushahidi Sync Key',
-		'flsms_link' => 'FrontlineSMS HTTP Post LINK',
-		'flsms_synchronize' => 'Sync with Ushahidi',
+		'flsms_description' => 'FrontlineSMS is free and open source software that enables users to send and receive text messages with large groups of people through mobile phones. Click on the box below to download the latest version from FrontlineSMS.com.',
+		'flsms_download' => 'Download and install FrontlineSMS',
+		'flsms_instructions' => 'Detailed instructions on how to send SMS from your FronlineSMS installation are available <strong><a href="https://wiki.ushahidi.com/pages/viewpage.action?pageId=5670692" target="_blank">here</a></strong>. The URL and API Key below are required to set up the sync with FrontlineSMS.',
+		'flsms_link' => 'Copy and paste this into the FrontlineSMS "Address" field',
+		'flsms_key' => 'Copy and paste this into the FrontlineSMS "Ushahidi API Key" field',
+		'flsms_synchronize' => 'Connecting FrontlineSMS to this Ushahidi deployment',
 		'flsms_text_1' => 'Enter phone number(s) connected to Frontline SMS in the field(s) below',
 		'flsms_text_2' => 'Enter the number without any + or dashes below',
 		'option_1' => 'Option 1: Use Frontline SMS',
@@ -214,6 +220,16 @@ $lang = array(
 	'sms_no3' => array(
 		'length' => 'The phone 3 field is too long.',
 		'numeric' => 'The phone 3 field should contain numbers only.',
-	)
+	),
+	'twitter' => array(
+		'title' => 'Twitter Setup Options',
+		'description' => 'To get the information below, set up your deployment as a new Twitter application at',
+		'api_key' => 'Consumer Key',
+		'api_key_secret' => 'Consumer secret',
+		'token' => 'Access Token',
+		'token_secret' => 'Access Token Secret',
+	),
+	'test_settings' => 'Test settings' 
+
 );
 ?>
