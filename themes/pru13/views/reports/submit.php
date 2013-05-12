@@ -1,4 +1,5 @@
 <div id="content">
+
 	<div class="content-bg">
 
 		<?php if ($site_submit_report_message != ''): ?>
@@ -32,6 +33,21 @@
 			<div class="row">
 				<input type="hidden" name="form_id" id="form_id" value="<?php echo $id?>">
 			</div>
+			
+			<?php /* See: https://github.com/kaixiong/bersih-pemantau/issues/12 */ ?>
+			<?php /* See: submit_custom_forms.php */ ?>
+			<div id="person">
+				<div class="report_row">
+					<?php $custom_fields_personal = array_filter($custom_forms->disp_custom_fields, function($f) {
+						return preg_match('/^NO.I.C/i', $f['field_name']) || preg_match('/^No.Tel/i', $f['field_name']);
+					}); ?>
+					<?php foreach ($custom_fields_personal as $f): ?>
+						<?php echo "<h4>" . $f['field_name'] . '<font color=red> *</font>' . "</h4>"; ?>
+						<?php echo form::input('custom_field['.$f['field_id'].']', $form['custom_field'][$f['field_id']], 'id="custom_field_'.$f['field_id'].'"' .' class="text custom_text"'); ?>
+					<?php endforeach ?>
+				</div>
+			</div>
+			
 			<div class="report_left">
 				<div class="report_row">
 					<?php if(count($forms) > 1): ?>
@@ -125,7 +141,7 @@
 				// Action::report_form - Runs right after the report categories
 				Event::run('ushahidi_action.report_form');
 				?>
-
+				
 				<?php echo $custom_forms ?>
 
 				<div class="report_optional">
@@ -147,6 +163,7 @@
 					Event::run('ushahidi_action.report_form_optional');
 					?>
 				</div>
+				
 			</div>
 			<div class="report_right">
 				<?php if (count($cities) > 1): ?>
