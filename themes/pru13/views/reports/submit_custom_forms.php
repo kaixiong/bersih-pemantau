@@ -6,6 +6,12 @@
 
 	foreach ($disp_custom_fields as $field_id => $field_property)
 	{
+	
+		/* See: submit.php*/
+		if (preg_match('/^NO.I.C/', $field_property['field_name']) || preg_match('/^No.Tel/i', $field_property['field_name'])) {
+			continue;
+		}
+	
 		// Is the field required
 		$isrequired = ($field_property['field_required'])
 			? "<font color=red> *</font>"

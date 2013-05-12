@@ -1,0 +1,19 @@
+ServerName localhost
+NameVirtualHost *:11180
+Listen 11180
+
+Include /etc/apache2/mods-enabled/*.load
+Include /etc/apache2/mods-enabled/*.conf
+
+LockFile ./.apache/lock
+PidFile ./.apache/pid
+
+LogLevel debug
+ErrorLog ./.apache/error.log
+CustomLog ./.apache/access.log combined
+
+<VirtualHost *:11180>
+
+	DocumentRoot .
+
+</VirtualHost>
