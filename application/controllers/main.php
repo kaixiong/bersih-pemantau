@@ -263,9 +263,8 @@ class Main_Controller extends Template_Controller {
 		}
 
 		// Get Twitter Hashtags
-		$this->template->content->twitter_hashtag_array = array_filter(array_map('trim',
-			explode(',', Kohana::config('settings.twitter_hashtags'))));
-
+		//$this->template->content->twitter_hashtag_array = array_filter(array_map('trim',explode(',', Kohana::config('settings.twitter_hashtags'))));
+		
 		// Get Report-To-Email
 		$this->template->content->report_email = Kohana::config('settings.site_email');
 

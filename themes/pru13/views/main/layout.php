@@ -157,35 +157,7 @@
 
 		<div id="twitter-feed">
 			<h5>Jom Pantau Tweets</h5>
-<?php
 
-			$hashtag = "jompantau";
-			$cachefile = "application/cache/" . $hashtag ."-json.cache";
-			$cachetime = 1 * 60; // where 1 is how many minutes you want to cache
-
-			if (file_exists($cachefile) && (time() - $cachetime < filemtime($cachefile)))
-			{
-			  $json = file_get_contents($cachefile);
-			}
-			else
-			{
-			  $json = file_get_contents("http://search.twitter.com/search.json?rpp=5&result_type=recent&q=" .$hashtag);
-			  $fp = fopen($cachefile, 'w');
-			  fwrite($fp, $json);
-			  fclose($fp);
-			}
-			$results = json_decode($json)->results;
-
-			?>
-			<?php foreach( $results as $result) { ?>
-				<div class="result">
-					<div class="byline">
-						<span class="by"><a target="_blank" href="https://twitter.com/<?php echo $result->from_user ?>"><?php echo $result->from_user ?></a></span>
-						<span class="date"><?php echo date("M j, g:ia",strtotime($result->created_at)); ?></span>
-					</div>
-					<div class="tweet"><?php echo $result->text ?></div>
-				</div>
-			 <?php } ?>
 			</div>
 			<div style="float:right;padding: 0 0 0 15px;width: 285px;" class="clearingfix">
 			<?php if ($layers): ?>

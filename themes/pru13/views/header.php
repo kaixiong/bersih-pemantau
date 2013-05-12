@@ -41,6 +41,7 @@
         });
 	})(jQuery);
 	</script>
+	
 </head>
 
 <?php
