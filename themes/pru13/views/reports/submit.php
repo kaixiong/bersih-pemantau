@@ -334,3 +334,23 @@
 		<!-- end report form block -->
 	</div>
 </div>
+
+<script type="text/javascript">
+	$().ready(function() {
+
+		// Extract text in brackets to help text.
+		$('.report_row h4').each(function(){
+
+			var desc = $(this).html();
+			var f_bracket = desc.indexOf('(');
+			var e_bracket = desc.indexOf(')');
+
+			if(f_bracket === -1 || e_bracket == -1){
+				return;
+			}
+
+			$(this).html(desc.substring(0, f_bracket));
+			$(this).next(':input').after('<span class="example">' + desc.substring(f_bracket + 1, e_bracket) + '</span>')
+		});
+	});
+</script>
