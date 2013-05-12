@@ -1,6 +1,7 @@
 /* Handcoded by RapidxHTML - htp://www.rapidxhtml.com */
 
 @import url(http://fonts.googleapis.com/css?family=Oswald);
+@import url(neat-report.css);
 
 /* reset */
 body,div,dl,dt,dd,ul,ol,li,pre,form,fieldset,input,textarea,p,blockquote,th,td {
@@ -2633,3 +2634,4 @@ div#topmenu li a:hover {
     color: yellow;
     font-style: none;
 }
+

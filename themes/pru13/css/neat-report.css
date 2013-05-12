@@ -1,0 +1,66 @@
+.neat-report #person,
+.neat-report #report {
+	padding: 1em;
+}
+
+.neat-report .report_optional {
+	background: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.neat-report .report_row {
+	margin: 1em auto;
+	width: 80%;
+}
+
+.neat-report h4 {
+	float: left;
+	width: 196px;
+	text-align: right;
+}
+
+.neat-report h4 + input,
+.neat-report h4 + textarea,
+.neat-report h4 + .form_value {
+	padding: 0.5em;
+	margin-left: 1em;
+	width: 60%;
+}
+
+.neat-report .form_value {
+	display: inline-block;
+	padding: 0;
+}
+
+.neat-report .example {
+	color: #a1a1a1;
+	display: block;
+	font-weight: normal;
+	font-size: 0.75em;
+	margin-left: 210px;
+	padding: 0.5em 0;
+}
+
+.neat-report hr {
+	border: 1px solid #ccc;
+	clear: both;
+	margin: 1em auto;
+	width: 80%;
+}
+
+.neat-report .report_location {
+	margin: 0 auto 2em;
+	width: 65%;
+}
+
+.neat-report .report_map {
+	width: 99%;
+}
+
+.neat-report .scalable input {
+	padding: 0.5em;
+	width: 90%;
+}
+
