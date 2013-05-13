@@ -38,6 +38,16 @@
 			<div id="person">
 				<h2><?echo Kohana::lang('ui_main.complainant_info'); ?></h2>
 
+				<div class="report_row">
+					<h4><?php echo Kohana::lang('ui_main.full_name'); ?></h4>
+					<?php print form::input('person_first', $form['person_first'], ' class="text long"'); ?>
+				</div>
+				<div class="report_row">
+					<h4><?php echo Kohana::lang('ui_main.reports_email'); ?></h4>
+					<?php print form::input('person_email', $form['person_email'], ' class="text long"'); ?>
+				</div>
+				<?php Event::run('ushahidi_action.report_form_optional'); ?>
+
 				<?php /* See: submit_custom_forms.php */ ?>
 				<?php $custom_fields_personal = array_filter($custom_forms->disp_custom_fields, function($f) {
 					return preg_match('/^NO.I.C/i', $f['field_name']) || preg_match('/^No.Tel/i', $f['field_name']);
@@ -48,23 +58,6 @@
 						<?php echo form::input('custom_field['.$f['field_id'].']', $form['custom_field'][$f['field_id']], 'id="custom_field_'.$f['field_id'].'"' .' class="text custom_text long"'); ?>
 					</div>
 				<?php endforeach ?>
-
-				<div class="report_optional">
-					<div class="report_row">
-						<h4><?php echo Kohana::lang('ui_main.reports_first'); ?></h4>
-						<?php print form::input('person_first', $form['person_first'], ' class="text long"'); ?>
-					</div>
-					<div class="report_row">
-						<h4><?php echo Kohana::lang('ui_main.reports_last'); ?></h4>
-						<?php print form::input('person_last', $form['person_last'], ' class="text long"'); ?>
-					</div>
-					<div class="report_row">
-						<h4><?php echo Kohana::lang('ui_main.reports_email'); ?></h4>
-						<?php print form::input('person_email', $form['person_email'], ' class="text long"'); ?>
-					</div>
-					<?php Event::run('ushahidi_action.report_form_optional'); ?>
-				</div>
-
 			</div>
 
 			<div id="report">
