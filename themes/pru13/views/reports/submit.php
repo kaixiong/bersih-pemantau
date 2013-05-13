@@ -150,9 +150,9 @@
 			</div>
 			<div class="report_right">
 				<div class="report_row">
-					<h4><?php echo 'Parliament Seat'; ?></h4>
+					<h4><?php echo Kohana::lang('ui_main.parliament_seat'); ?></h4>
 					<?php
-					$parliament_seat_entries = array(''=>'Select a Parliamentary Seat');
+					$parliament_seat_entries = array(''=>Kohana::lang('ui_main.select_parliament_seat'));
 					foreach ($parliament_seats as $id => $seat) {
 						$parliament_seat_entries[$seat->id] = $seat->id . ' - ' . $seat->name . ', ' . $seat->state;
 					}
@@ -160,8 +160,8 @@
 					?>
 				</div>
 				<div class="report_row">
-					<h4><?php echo 'State Seat'; ?></h4>
-					<?php print form::dropdown(array('name'=>'select_state_seat', 'class'=>"select"), array(''=>'Select a State Seat')); ?>
+					<h4><?php echo Kohana::lang('ui_main.state_seat'); ?></h4>
+					<?php print form::dropdown(array('name'=>'select_state_seat', 'class'=>'select'), array(''=>Kohana::lang('ui_main.select_state_seat'))); ?>
 				</div>
 
 				<div class="report_row">
