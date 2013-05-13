@@ -15,7 +15,7 @@
 		<input type="hidden" name="country_name" id="country_name" value="<?php echo $form['country_name']; ?>" />
 		<input type="hidden" name="incident_zoom" id="incident_zoom" value="<?php echo $form['incident_zoom']; ?>" />
 		<div class="big-block">
-			<h1><?php echo Kohana::lang('ui_main.reports_submit_new'); ?></h1>
+			<h1><?php echo Kohana::lang('ui_main.reports_form_title'); ?></h1>
 			<?php if ($form_error): ?>
 			<!-- red-box -->
 			<div class="red-box">

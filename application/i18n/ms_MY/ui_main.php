@@ -422,6 +422,7 @@ $lang = array(
 'reports_features' => 'ciri-ciri',
 'reports_find_location' => 'Cari lokasi berhampiran anda',
 'reports_first' => 'Nama Pertama',
+'reports_form_title' => 'Borang Aduan PRU13',
 'reports_last' => 'Nama Terakhir',
 'reports_location_name' => 'Lokasi',
 'reports_news' => 'Pautan Sumber Berita ',

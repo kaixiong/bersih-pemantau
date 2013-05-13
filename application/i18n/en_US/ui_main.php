@@ -419,6 +419,7 @@ $lang = array(
 	'reports_features' => 'Features',
 	'reports_find_location' => 'Find a location near you',
 	'reports_first' => 'First Name',
+	'reports_form_title' => 'PRU13 Complaint Form',
 	'reports_last' => 'Last Name',
 	'reports_location_name' => 'Location Name',
 	'reports_news' => 'News Source Link',
