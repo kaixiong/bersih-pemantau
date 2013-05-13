@@ -409,10 +409,7 @@ class Reports_Controller extends Main_Controller {
 		}
 		$this->themes->js->geometries = $form['geometry'];
 
-		$result = $this->db->query('SELECT * FROM `parliament_seats`');
-		foreach ($result as $row) {
-			$parliament_seats[$row->id] = $row;
-		}
+		$parliament_seats = elections::parliament_seats();
 		$this->themes->js->parliament_seats = json_encode($parliament_seats);
 
 		$this->template->content->parliament_seats = $parliament_seats;
@@ -430,11 +427,7 @@ class Reports_Controller extends Main_Controller {
 			return;
 		}
 
-		$state_seats = array();
-		$result = $this->db->query('SELECT `id`, `name`, `latitude`, `longitude` FROM `state_seats` WHERE `parliament_id` = ?', $id);
-		foreach ($result as $row) {
-			$state_seats[$row->id] = $row;
-		}
+		$state_seats = elections::state_seats($id);
 		echo json_encode($state_seats);
 	}
 
