@@ -1000,9 +1000,8 @@
 
 				if (seatID != '') {
 					seat = parliamentSeats[seatID];
-					setMapLocation(seat.longitude, seat.latitude);
-
 					loadStateSeats(seatID);
+					setMapLocation(seat.longitude, seat.latitude);
 				}
 			});
 
