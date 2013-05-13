@@ -954,7 +954,7 @@
 			var stateSeats = null;
 
 			function loadStateSeats(parliamentSeatID) {
-				stateSeatSelect.empty().append($('<option/>').val('').text('<?php echo Kohana::lang("ui_main.select_state_seat"); ?>');
+				stateSeatSelect.empty().append($('<option/>').val('').text('<?php echo Kohana::lang("ui_main.select_state_seat"); ?>'));
 				stateSeats = null;
 
 				if (parliamentSeatID != '') {

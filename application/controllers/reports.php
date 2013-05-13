@@ -411,7 +411,7 @@ class Reports_Controller extends Main_Controller {
 
 		$result = $this->db->query('SELECT * FROM `parliament_seats`');
 		foreach ($result as $row) {
-            $parliament_seats[$row->id] = $row;
+			$parliament_seats[$row->id] = $row;
 		}
 		$this->themes->js->parliament_seats = json_encode($parliament_seats);
 
