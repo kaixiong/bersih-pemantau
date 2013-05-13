@@ -310,14 +310,17 @@ class Reports_Controller extends Main_Controller {
 		{
 			// Instantiate Validation, use $post, so we don't overwrite $_POST fields with our own things
 			$post = array_merge($_POST, $_FILES);
-			
+
+			// HACK: Forward parliament and state seat selection into their respective custom fields
+			$post['custom_field'][9]  = isset($post['select_parliament_seat']) ? $post['select_parliament_seat'] : '';
+			$post['custom_field'][10] = isset($post['select_state_seat']) ? $post['select_state_seat'] : '';
+
 			// Adding event for endtime plugin to hook into
 			Event::run('ushahidi_action.report_posted_frontend', $post);
 
 			// Test to see if things passed the rule checks
 			if (reports::validate($post))
 			{
-
 				// STEP 1: SAVE LOCATION
 				$location = new Location_Model();
 				reports::save_location($post, $location);

@@ -26,4 +26,26 @@ class elections_Core {
 
 		return $seats;
 	}
+
+	public static function valid_parliament_seat($parliament_seat_id)
+	{
+		$db = new Database();
+
+		$result = $db->query('SELECT `id` FROM `parliament_seats` WHERE `id` = ?', $parliament_seat_id);
+		return $result->count() == 1;
+	}
+
+	public static function valid_state_seat($state_seat_id, $parliament_seat_id)
+	{
+		// $parliament_seat_id can be an array if called as a validation callback
+		if (is_array($parliament_seat_id))
+		{
+			$parliament_seat_id = $parliament_seat_id[0];
+		}
+
+		$db = new Database();
+
+		$result = $db->query('SELECT `id` FROM `state_seats` WHERE `id` = ? AND `parliament_id` = ?', $state_seat_id, $parliament_seat_id);
+		return $result->count() == 1;
+	}
 }

@@ -98,7 +98,7 @@ class reports_Core {
 				}
 			}
 		}
-		
+
 		// If deployment is a single country deployment, check that the location mapped is in the default country
 		if ( ! Kohana::config('settings.multi_country') AND isset($post->country_name))
 		{
@@ -149,6 +149,13 @@ class reports_Core {
 		// Custom form fields validation
 		customforms::validate_custom_form_fields($post);
 		//> END custom form fields validation
+
+		// Validate seat selection
+		$post->add_rules('select_parliament_seat', 'required', 'elections::valid_parliament_seat');
+		if ( ! empty($post->select_state_seat))
+		{
+			$post->add_rules('select_state_seat', 'elections::valid_state_seat['.$post->select_parliament_seat.']');
+		}
 
 		// Return
 		return $post->validate();
