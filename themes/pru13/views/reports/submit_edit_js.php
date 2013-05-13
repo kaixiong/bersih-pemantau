@@ -949,7 +949,6 @@
 		$().ready(function() {
 			var parliamentSeatSelect = $('#select_parliament_seat');
 			var stateSeatSelect = $('#select_state_seat');
-			var pollingCentreSelect = $('#select_polling_centre');
 
 			var parliamentSeats = <?php echo $parliament_seats; ?>;
 			var stateSeats = null;
@@ -966,16 +965,6 @@
 						});
 					});
 				}
-			}
-
-			function loadPollingCentres(parliamentSeatID, stateSeatID) {
-				pollingCentreSelect.empty().append($('<option/>').val('').text('Select a Voting Centre'));
-
-				$.getJSON('polling_centres/'+parliamentSeatID+','+stateSeatID, function(data) {
-					$.each(data, function(index, entry) {
-						pollingCentreSelect.append($('<option/>').val(entry.id).text(entry.id + ' - ' + entry.name));
-					});
-				});
 			}
 
 			function setMapLocation(longitude, latitude) {
