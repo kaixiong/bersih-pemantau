@@ -3,6 +3,13 @@
 	padding: 1em;
 }
 
+.neat-report h2 {
+    border-top: 1px solid #ccc;
+    font-size: 1.4em;
+    color: black;
+    padding-top: 0.2em;
+}
+
 .neat-report .report_optional {
 	background: none;
 	margin: 0;
@@ -19,6 +26,7 @@
 	float: left;
 	width: 196px;
 	text-align: right;
+	font-weight: normal;
 }
 
 .neat-report h4 + input,
@@ -45,9 +53,10 @@
 }
 
 .neat-report hr {
-	border: 1px solid #ccc;
+	border: none;
+	border-top: 1px solid #ccc;
 	clear: both;
-	margin: 1em auto;
+	margin: 1.5em auto;
 	width: 80%;
 }
 

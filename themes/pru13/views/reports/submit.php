@@ -36,7 +36,8 @@
 			
 			<?php /* See: https://github.com/kaixiong/bersih-pemantau/issues/12 */ ?>
 			<div id="person">
-			
+				<h2><?echo Kohana::lang('ui_main.complainant_info'); ?></h2>
+
 				<?php /* See: submit_custom_forms.php */ ?>
 				<?php $custom_fields_personal = array_filter($custom_forms->disp_custom_fields, function($f) {
 					return preg_match('/^NO.I.C/i', $f['field_name']) || preg_match('/^No.Tel/i', $f['field_name']);
@@ -66,9 +67,8 @@
 
 			</div>
 
-			<hr/>
-
 			<div id="report">
+				<h2><?echo Kohana::lang('ui_main.complainant_report'); ?></h2>
 
 				<div class="report_row">
 					<h4><?php echo Kohana::lang('ui_main.parliament_seat'); ?></h4>
@@ -160,67 +160,48 @@
 					<h4><?php echo Kohana::lang('ui_main.reports_description'); ?> <span class="required">*</span> </h4>
 					<?php print form::textarea('incident_description', $form['incident_description'], ' rows="10" class="textarea long" ') ?>
 				</div>
-				<div class="report_row" id="datetime_default">
-					<h4>
-						<?php echo Kohana::lang('ui_main.date_time'); ?>
-					</h4>
+				<div class="report_row" id="datetime_edit">
+					<h4><?php echo Kohana::lang('ui_main.reports_date'); ?></h4>
 					<div class="form_value">
-						<a href="#" id="date_toggle" class="show-more"><?php echo Kohana::lang('ui_main.modify_date'); ?></a>
-						<?php echo Kohana::lang('ui_main.today_at')." "."<span id='current_time'>".$form['incident_hour']
-							.":".$form['incident_minute']." ".$form['incident_ampm']."</span>"; ?>
-						<?php if($site_timezone): ?>
-							<small>(<?php echo $site_timezone; ?>)</small>
-						<?php endif; ?>
-					</div>
-				</div>
-				<div class="hide" id="datetime_edit">
-					<div class="report_row date-box">
-						<h4><?php echo Kohana::lang('ui_main.reports_date'); ?></h4>
-						<div class="form_value">
-							<?php print form::input('incident_date', $form['incident_date'], ' class="text short"'); ?>
-							<script type="text/javascript">
-								$().ready(function() {
-									$("#incident_date").datepicker({ 
-										showOn: "both", 
-										buttonImage: "<?php echo url::file_loc('img'); ?>media/img/icon-calendar.gif", 
-										buttonImageOnly: true 
-									});
+						<?php print form::input('incident_date', $form['incident_date'], ' class="text short"'); ?>
+						<script type="text/javascript">
+							$().ready(function() {
+								$("#incident_date").datepicker({ 
+									showOn: "both", 
+									buttonImage: "<?php echo url::file_loc('img'); ?>media/img/icon-calendar.gif", 
+									buttonImageOnly: true 
 								});
-							</script>
-						</div>
+							});
+						</script>
 					</div>
-					<div class="report_row time">
-						<h4><?php echo Kohana::lang('ui_main.reports_time'); ?></h4>
-						<div class="form_value">
-							<?php
-								for ($i=1; $i <= 12 ; $i++)
-								{
-									// Add Leading Zero
-									$hour_array[sprintf("%02d", $i)] = sprintf("%02d", $i);
-								}
-								for ($j=0; $j <= 59 ; $j++)
-								{
-									// Add Leading Zero
-									$minute_array[sprintf("%02d", $j)] = sprintf("%02d", $j);
-								}
-								$ampm_array = array('pm'=>'pm','am'=>'am');
-								print form::dropdown('incident_hour',$hour_array,$form['incident_hour']);
-								print '<span class="dots">:</span>';
-								print form::dropdown('incident_minute',$minute_array,$form['incident_minute']);
-								print '<span class="dots">:</span>';
-								print form::dropdown('incident_ampm',$ampm_array,$form['incident_ampm']);
-							?>
-							<?php if ($site_timezone != NULL): ?>
-								<small>(<?php echo $site_timezone; ?>)</small>
-							<?php endif; ?>
-						</div>
+				</div>
+				<div class="report_row time">
+					<h4><?php echo Kohana::lang('ui_main.reports_time'); ?></h4>
+					<div class="form_value">
+						<?php
+							for ($i=1; $i <= 12 ; $i++)
+							{
+								// Add Leading Zero
+								$hour_array[sprintf("%02d", $i)] = sprintf("%02d", $i);
+							}
+							for ($j=0; $j <= 59 ; $j++)
+							{
+								// Add Leading Zero
+								$minute_array[sprintf("%02d", $j)] = sprintf("%02d", $j);
+							}
+							$ampm_array = array('pm'=>'pm','am'=>'am');
+							print form::dropdown('incident_hour',$hour_array,$form['incident_hour']);
+							print '<span class="dots">:</span>';
+							print form::dropdown('incident_minute',$minute_array,$form['incident_minute']);
+							print '<span class="dots">:</span>';
+							print form::dropdown('incident_ampm',$ampm_array,$form['incident_ampm']);
+						?>
 					</div>
-					<div style="clear:both; display:block;" id="incident_date_time"></div>
 				</div>
-				<div class="report_row">
-					<!-- Adding event for endtime plugin to hook into -->
-					<?php Event::run('ushahidi_action.report_form_frontend_after_time'); ?>
-				</div>
+
+				<!-- Adding event for endtime plugin to hook into -->
+				<?php Event::run('ushahidi_action.report_form_frontend_after_time'); ?>
+
 				<div class="report_row">
 					<h4><?php echo Kohana::lang('ui_main.reports_categories'); ?> <span class="required">*</span></h4>
 					<div class="report_category form_value" id="categories">
