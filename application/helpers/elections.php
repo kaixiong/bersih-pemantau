@@ -27,6 +27,18 @@ class elections_Core {
 		return $seats;
 	}
 
+	public static function canonical_seat_id($seat_id)
+	{
+		if (preg_match('/^\s*([PN])\.?\s?([0-9]+)\s*$/i', $seat_id, $matches))
+		{
+			return strtoupper($matches[1]) . $matches[2];
+		}
+		else
+		{
+			return '';
+		}
+	}
+
 	public static function valid_parliament_seat($parliament_seat_id)
 	{
 		$db = new Database();

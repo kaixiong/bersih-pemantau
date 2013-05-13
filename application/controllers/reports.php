@@ -311,9 +311,16 @@ class Reports_Controller extends Main_Controller {
 			// Instantiate Validation, use $post, so we don't overwrite $_POST fields with our own things
 			$post = array_merge($_POST, $_FILES);
 
+			// Sanitise and canonicalise seat IDs
+			// FIXME: Is there a better place to put this?
+			$parliament_seat = isset($post['select_parliament_seat']) ? elections::canonical_seat_id($post['select_parliament_seat']) : '';
+			$state_seat = isset($post['select_state_seat']) ? elections::canonical_seat_id($post['select_state_seat']) : '';
+			$post['select_parliament_seat'] = $parliament_seat;
+			$post['select_state_seat'] = $state_seat;
+
 			// HACK: Forward parliament and state seat selection into their respective custom fields
-			$post['custom_field'][9]  = isset($post['select_parliament_seat']) ? $post['select_parliament_seat'] : '';
-			$post['custom_field'][10] = isset($post['select_state_seat']) ? $post['select_state_seat'] : '';
+			$post['custom_field'][9] = $parliament_seat;
+			$post['custom_field'][10] = $state_seat;
 
 			// Adding event for endtime plugin to hook into
 			Event::run('ushahidi_action.report_posted_frontend', $post);
