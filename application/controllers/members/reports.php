@@ -574,6 +574,12 @@ class Reports_Controller extends Members_Controller {
 		// Pack Javascript
 		$myPacker = new javascriptpacker($this->themes->js , 'Normal', FALSE, FALSE);
 		$this->themes->js = $myPacker->pack();
+
+		$result = $this->db->query('SELECT * FROM `parliament_seats`');
+		foreach ($result as $row) {
+			$parliament_seats[$row->id] = $row;
+		}
+		$this->themes->js->parliament_seats = json_encode($parliament_seats);
 	}
 
 	/* private functions */

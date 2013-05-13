@@ -835,6 +835,12 @@ class Reports_Controller extends Admin_Controller {
 		$this->themes->js->incident_zoom = $form['incident_zoom'];
 		$this->themes->js->geometries = $form['geometry'];
 
+		$result = $this->db->query('SELECT * FROM `parliament_seats`');
+		foreach ($result as $row) {
+			$parliament_seats[$row->id] = $row;
+		}
+		$this->themes->js->parliament_seats = json_encode($parliament_seats);
+
 		// Inline Javascript
 		$this->template->content->date_picker_js = $this->_date_picker_js();
 		$this->template->content->color_picker_js = $this->_color_picker_js();
