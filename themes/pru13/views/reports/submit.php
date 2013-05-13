@@ -208,15 +208,12 @@
 					</div>
 				</div>
 
-
 				<?php
 				// Action::report_form - Runs right after the report categories
 				Event::run('ushahidi_action.report_form');
 				?>
-				
-				<?php echo $custom_forms ?>
-				
-				<hr/>
+
+				<hr />
 
 				<div class="report_row">
 					<h4><?php echo Kohana::lang('ui_main.reports_news'); ?></h4>
@@ -305,11 +302,15 @@
 						</div>
 					</div>
 				</div>
-				
+
+ 				<hr />
+
+				<?php echo $custom_forms ?>
+
 				<div class="report_row">
 					<input name="submit" type="submit" value="<?php echo Kohana::lang('ui_main.reports_btn_submit'); ?>" class="btn_submit" /> 
 				</div>
-				
+
 			</div>
 		</div>
 		<?php print form::close(); ?>
