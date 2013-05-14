@@ -108,39 +108,16 @@ class reports_Core {
 				$post->add_error('country_name','single_country', array(ORM::factory('country', Kohana::config('settings.default_country'))->country) );
 			}
 		}
-		
+
 		// Validate photo uploads
 		$post->add_rules('incident_photo', 'upload::valid', 'upload::type[gif,jpg,png,jpeg]', 'upload::size[2M]');
 
 
 		// Validate Personal Information
-		if ( ! empty($post->person_first))
-		{
-			$post->add_rules('person_first', 'length[2,100]');
-		}
-		else
-		{
-			$post->person_first = '';
-		}
+		$post->add_rules('person_first', 'length[2,100]');
+		$post->person_last = ''; // Ignore last name
+		$post->add_rules('person_email', 'email', 'length[3,100]');
 
-		if ( ! empty($post->person_last))
-		{
-			$post->add_rules('person_last', 'length[2,100]');
-		}
-		else
-		{
-			$post->person_last = '';
-		}
-
-		if ( ! empty($post->person_email))
-		{
-			$post->add_rules('person_email', 'email', 'length[3,100]');
-		}
-		else
-		{
-			$post->person_email = '';
-		}
-		
 		$post->add_rules('location_id','numeric');
 		$post->add_rules('incident_active', 'between[0,1]');
 		$post->add_rules('incident_verified', 'between[0,1]');
