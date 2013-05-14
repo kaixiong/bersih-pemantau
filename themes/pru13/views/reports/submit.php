@@ -39,11 +39,11 @@
 				<h2><?echo Kohana::lang('ui_main.complainant_info'); ?></h2>
 
 				<div class="report_row">
-					<h4><?php echo Kohana::lang('ui_main.full_name'); ?></h4>
+					<h4><span class="required">*</span><?php echo Kohana::lang('ui_main.full_name'); ?></h4>
 					<?php print form::input('person_first', $form['person_first'], ' class="text long"'); ?>
 				</div>
 				<div class="report_row">
-					<h4><?php echo Kohana::lang('ui_main.reports_email'); ?></h4>
+					<h4><span class="required">*</span><?php echo Kohana::lang('ui_main.reports_email'); ?></h4>
 					<?php print form::input('person_email', $form['person_email'], ' class="text long"'); ?>
 				</div>
 				<?php Event::run('ushahidi_action.report_form_optional'); ?>
@@ -54,7 +54,7 @@
 				}); ?>
 				<?php foreach ($custom_fields_personal as $f): ?>
 					<div class="report_row">
-						<?php echo "<h4>" . $f['field_name'] . '<font color=red> *</font>' . "</h4>"; ?>
+						<?php echo "<h4>" . '<span class="required">*</span>' . $f['field_name'] . "</h4>"; ?>
 						<?php echo form::input('custom_field['.$f['field_id'].']', $form['custom_field'][$f['field_id']], 'id="custom_field_'.$f['field_id'].'"' .' class="text custom_text long"'); ?>
 					</div>
 				<?php endforeach ?>
@@ -64,7 +64,7 @@
 				<h2><?echo Kohana::lang('ui_main.complainant_report'); ?></h2>
 
 				<div class="report_row">
-					<h4><?php echo Kohana::lang('ui_main.parliament_seat'); ?></h4>
+					<h4><span class="required">*</span><?php echo Kohana::lang('ui_main.parliament_seat'); ?></h4>
 					<?php
 					$parliament_seat_entries = array(''=>Kohana::lang('ui_main.select_parliament_seat'));
 					foreach ($parliament_seats as $id => $seat) {
@@ -138,23 +138,22 @@
 				<?php Event::run('ushahidi_action.report_form_location', $id); ?>
 				<div class="report_row">
 					<h4>
-						<?php echo Kohana::lang('ui_main.reports_location_name'); ?> 
-						<span class="required">*</span><br />
+						<span class="required">*</span><?php echo Kohana::lang('ui_main.reports_location_name'); ?>
 					</h4>
 					<?php print form::input('location_name', $form['location_name'], ' class="text long"'); ?>
 					<span class="example"><?php echo Kohana::lang('ui_main.detailed_location_example'); ?></span>
 				</div>
 			
 				<div class="report_row">
-					<h4><?php echo Kohana::lang('ui_main.reports_title'); ?> <span class="required">*</span> </h4>
+					<h4><span class="required">*</span><?php echo Kohana::lang('ui_main.reports_title'); ?></h4>
 					<?php print form::input('incident_title', $form['incident_title'], ' class="text long"'); ?>
 				</div>
 				<div class="report_row">
-					<h4><?php echo Kohana::lang('ui_main.reports_description'); ?> <span class="required">*</span> </h4>
+					<h4><span class="required">*</span><?php echo Kohana::lang('ui_main.reports_description'); ?></h4>
 					<?php print form::textarea('incident_description', $form['incident_description'], ' rows="10" class="textarea long" ') ?>
 				</div>
 				<div class="report_row" id="datetime_edit">
-					<h4><?php echo Kohana::lang('ui_main.reports_date'); ?></h4>
+					<h4><span class="required">*</span><?php echo Kohana::lang('ui_main.reports_date'); ?></h4>
 					<div class="form_value">
 						<?php print form::input('incident_date', $form['incident_date'], ' class="text short"'); ?>
 						<script type="text/javascript">
@@ -169,7 +168,7 @@
 					</div>
 				</div>
 				<div class="report_row time">
-					<h4><?php echo Kohana::lang('ui_main.reports_time'); ?></h4>
+					<h4><span class="required">*</span><?php echo Kohana::lang('ui_main.reports_time'); ?></h4>
 					<div class="form_value">
 						<?php
 							for ($i=1; $i <= 12 ; $i++)
@@ -196,7 +195,7 @@
 				<?php Event::run('ushahidi_action.report_form_frontend_after_time'); ?>
 
 				<div class="report_row">
-					<h4><?php echo Kohana::lang('ui_main.reports_categories'); ?> <span class="required">*</span></h4>
+					<h4><span class="required">*</span><?php echo Kohana::lang('ui_main.reports_categories'); ?></h4>
 					<div class="report_category form_value" id="categories">
 					<?php
 						$selected_categories = (!empty($form['incident_category']) AND is_array($form['incident_category']))
@@ -307,10 +306,9 @@
 
 				<?php echo $custom_forms ?>
 
-				<div class="report_row">
+				<div class="report_row submit">
 					<input name="submit" type="submit" value="<?php echo Kohana::lang('ui_main.reports_btn_submit'); ?>" class="btn_submit" /> 
 				</div>
-
 			</div>
 		</div>
 		<?php print form::close(); ?>

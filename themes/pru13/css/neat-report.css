@@ -4,10 +4,10 @@
 }
 
 .neat-report h2 {
-    border-top: 1px solid #ccc;
-    font-size: 1.4em;
-    color: black;
-    padding-top: 0.2em;
+	border-top: 1px solid #ccc;
+	font-size: 1.4em;
+	color: black;
+	padding-top: 0.2em;
 }
 
 .neat-report .report_optional {
@@ -29,12 +29,15 @@
 	font-weight: normal;
 }
 
+.neat-report .report_row h4 {
+	margin-right: 1em;
+}
+
 .neat-report h4 + input,
 .neat-report h4 + textarea,
 .neat-report h4 + select,
 .neat-report h4 + .form_value {
-	padding: 0.5em;
-	margin-left: 1em;
+	padding: 0.5em 0 0;
 	width: 60%;
 }
 
@@ -74,3 +77,32 @@
 	width: 90%;
 }
 
+.neat-report .report_row.submit {
+	text-align: center;
+}
+
+.neat-report .btn_submit {
+	display: inline-block;
+	font-size: 1.2em;
+	text-transform: uppercase;
+}
+
+.neat-report #custom_field_row_7 label,
+.neat-report #custom_field_row_8 label {
+	font-size: 1.2em;
+}
+
+.neat-report #custom_field_row_7 span,
+.neat-report #custom_field_row_8 span {
+	line-height: 36px;
+}
+
+.neat-report .datetime-edit img {
+	margin-left: 0.5em;
+}
+
+.neat-report span.required {
+	display: inline-block;
+	color: red;
+	margin-right: 0.3em;
+}
