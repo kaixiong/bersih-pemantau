@@ -12,7 +12,7 @@
 	<script type="text/javascript">
 	(function($) {
         $(document).ready(function() {
-            var help = 'Carian...';
+            var help = "<?php echo Kohana::lang('ui_main.search'); ?>...";
             $('#search input').val(help)
                 .focus(function() {
                     var input = $(this);
