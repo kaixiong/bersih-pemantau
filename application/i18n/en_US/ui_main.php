@@ -426,6 +426,7 @@ $lang = array(
 	'reports_optional' => 'Optional Information',
 	'reports_photos' => 'Upload Photos',
 	'reports_return' => 'Return to the reports page',
+	'reports_return_home' => 'Return to homepage',
 	'reports_select_city' => 'Select a City',
 	'reports_submitted' => 'Your Report has been submitted to our staff for review. We will get back to you shortly if necessary.',
 	'reports_submit_new' => 'Submit a New Report',
