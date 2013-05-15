@@ -389,6 +389,10 @@ class Reports_Controller extends Admin_Controller {
 		// Initialize custom field array
 		$form['custom_field'] = customforms::get_custom_form_fields($id,$form_id,TRUE);
 
+		// HACK: Load parliament and state seats from custom fields into $form for population
+		$form['parliament_seat'] = $form['custom_field'][9];
+		$form['state_seat'] = $form['custom_field'][10];
+
 		// Locale (Language) Array
 		$this->template->content->locale_array = Kohana::config('locale.all_languages');
 

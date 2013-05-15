@@ -195,9 +195,16 @@
 								?>
            						</div>
 							</div>
+							<div class="row">
+								<h4><?php echo Kohana::lang('ui_main.parliament_seat'); ?></h4>
+								<?php echo form::input('select_parliament_seat', $form['parliament_seat']); ?>
+							</div>
+							<div class="row">
+								<h4><?php echo Kohana::lang('ui_main.state_seat'); ?></h4>
+								<?php echo form::input('select_state_seat', $form['state_seat']); ?>
+							</div>
 
-						<?php echo $custom_forms; ?>
-
+							<?php echo $custom_forms; ?>
 						</div>
 						<!-- f-col-1 -->
 						<div class="f-col-1">
