@@ -35,15 +35,29 @@
 
 .neat-report h4 + input,
 .neat-report h4 + textarea,
-.neat-report h4 + select,
-.neat-report h4 + .form_value {
-	padding: 0.5em 0 0;
+.neat-report h4 + select {
+	padding: 0.5em;
 	width: 60%;
 }
 
-.neat-report .form_value {
+.neat-report h4 + .form_value {
 	display: inline-block;
+	width: 60%;
 	padding: 0;
+}
+
+.neat-report .form_value input,
+.neat-report .form_value select {
+	padding: 0.5em;
+}
+
+.neat-report #incident_date {
+	vertical-align: middle;
+}
+.neat-report .ui-datepicker-trigger {
+	vertical-align: middle;
+	height: 33px;
+	-ms-interpolation-mode: cubic;
 }
 
 .neat-report .example {
