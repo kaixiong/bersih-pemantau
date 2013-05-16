@@ -107,7 +107,7 @@
 			</a>
 
 			<div class="contact-details">
-				<p>Pertanyann</p>
+				<p>Pertanyaan</p>
 				<ul>
 					<li><div class="icon" id="icon-phone"></div>013-7711071</li>
 					<li><div class="icon" id="icon-email"></div><a href="mailto:jompantau@komas.org">jompantau@komas.org</a></li>
