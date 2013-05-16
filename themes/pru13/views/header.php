@@ -101,7 +101,7 @@
 			<h1><a href="<?php echo url::site();?>"><?php echo $site_name; ?></a></h1>
 			<span><?php echo $site_tagline; ?></span>
 
-			<a class="button" href="<?echo url::site('reports/submit'); ?>">
+			<a class="button" href="<?php echo url::site('reports/submit'); ?>">
 				<div id="icon-form" class="icon"></div>
 				<span class="caption">Hantar Aduan Berkenaan PRU13</span>
 			</a>
