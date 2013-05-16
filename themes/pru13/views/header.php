@@ -67,7 +67,7 @@
 <body id="page" class="<?php echo $body_class; ?>">
 
 	<!-- wrapper -->
-	<div class="rapidxwpr floatholder">
+	<div class="rapidxwpr">
 		<!-- header -->
 		<div id="header">
 
@@ -100,81 +100,27 @@
 		<div id="logo">
 			<h1><a href="<?php echo url::site();?>"><?php echo $site_name; ?></a></h1>
 			<span><?php echo $site_tagline; ?></span>
+
+			<a class="button" href="<?echo url::site('reports/submit'); ?>">
+				<div id="icon-form" class="icon"></div>
+				<span class="caption">Hantar Aduan Berkenaan PRU13</span>
+			</a>
+
+			<div class="contact-details">
+				<p>Pertanyann</p>
+				<ul>
+					<li><div class="icon" id="icon-phone"></div>013-7711071</li>
+					<li><div class="icon" id="icon-email"></div><a href="mailto:jompantau@komas.org">jompantau@komas.org</a></li>
+				</ul>
+			</div>
 		</div>
 		<?php else: ?>
 		<a href="<?php echo url::site();?>"><img src="<?php echo $banner; ?>" alt="<?php echo $site_name; ?>" /></a>
 		<?php endif; ?>
 		<!-- / logo -->
-
-		<!-- mainmenu -->
-		<div id="mainmenu" class="clearingfix" style="background:#000;float:left;">
-			<!--tombol relawan-->
-            <!--
-			<div id="rela">
-				<a href="http://bit.ly/JSztNY">Daftar Pemantau</a>
-			</div><!--rela-->
-
-			<!--tombol aduan-->
-			<!--<div id="tomat">
-			<a href="reports/#middle"><?php echo "<span>Aduan :</span> ".Incident_Model::get_total_reports(TRUE); ?></a>
-			</div><!--tomat-->
-
-			<!--<div id="lapor">
-			<a href="<?php echo url::site('reports/submit/#mainmiddle'); ?>">Hantar Aduan</a>
-			</div><!--lapor-->
-
-			<!--<div id="sitemsg">
-			Sebarang aduan berkenaan pilihanraya boleh dibuat melalui salah satu cara berikut:
-			</div>-->
-
-			<p style="font-size:24px;color:#fff;padding:1em;">Sebarang aduan berkenaan pilihanraya boleh dibuat melalui salah satu cara berikut:</p>
-			<ul>
-				<?php //nav::main_tabs($this_page); ?>
-				<li>
-					<div id="icon-sms" class="icon"></div>
-					<div class="caption">
-						<span>SMS Aduan</span>
-						013-7711071
-					</div>
-				</li>
-				<li>
-					<div id="icon-phone" class="icon"></div>
-					<div class="caption">
-						<span>Talian Aduan</span>
-						03-7931 0840
-					</div>
-				</li>
-				<li>
-					<div id="icon-email" class="icon"></div>
-					<div class="caption">
-						<a href="mailto:jompantau@komas.org"><span>E-Mail Aduan</span></a>
-						jompantau@komas.org
-					</div>
-				</li>
-				<li style="border-right:1px solid #000;">
-					<div id="icon-twitter" class="icon"></div>
-					<div class="caption">
-						<a href="https://twitter.com/search?q=%23jompantau" target="_blank"><span>Tweet Aduan</span></a>
-						#jompantau
-					</div>
-				</li>
-				<li style="background:yellow;color:#000">
-					<div id="icon-form" class="icon"></div>
-					<div class="caption">
-						<a style="color:#000" href="<?php echo url::site('reports/submit'); ?>"><span>Hantar aduan</span></a>
-						online form
-					</div>
-				</li>
-			</ul>
-		</div>
-		<!-- / mainmenu -->
 	</div>
 	<!-- / header -->
-    <!-- / header item for plugins -->
-	<?php
-		// Action::header_item - Additional items to be added by plugins
-		Event::run('ushahidi_action.header_item');
-	?>
+
 	<!-- main body -->
 	<div id="middle">
 		<div class="background layoutleft">
