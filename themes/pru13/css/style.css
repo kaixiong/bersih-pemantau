@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     margin: 0;
     padding: 0;
-	line-height: 36px;
+    line-height: 1.4em;
 }
 
 h1{
@@ -66,8 +66,11 @@ h4{
 }
 
 h5{
-    background: none repeat scroll 0 0 #FFFF00;
     font-size: 150%;
+}
+
+.content-block h5 {
+    background: none repeat scroll 0 0 #FFFF00;
     margin-bottom: 10px;
     padding: 5px 10px;
 }
@@ -269,7 +272,6 @@ div#equalright{
 div#main{
     width: auto;
     margin: 0px;
-
 }
 
 div#mainmiddle{
@@ -283,8 +285,8 @@ div#main .withoutright{
 div#content{
     width: auto;
     padding:15px;
-	margin-top:5px;
-	background:url("../images/groovepaper.png") repeat scroll 0 0 #FFFFFF;
+    margin-top:5px;
+    background:url("../images/groovepaper.png") repeat scroll 0 0 #FFFFFF;
 }
 
 div#main .withright div#content{
@@ -297,9 +299,6 @@ div#main .withoutright div#content{
     margin: 0px;
     padding: 0px;
 }
-
-
-
 
 /* clearing & floating */
 .clearingfix:after{
@@ -659,10 +658,14 @@ div.content-block-right{
 #main .left-col { float:left; width:520px; margin-right:20px }
 #main .right-col { float:right;width:350px; }
 
-div.report-details{
+div.report-details {
     width: 300px;
     float: right;
     margin: 20px 0 0 0;
+}
+
+#main.report_detail {
+    margin-top: 1em;
 }
 
 .report_detail .r_verified, .report_detail .r_unverified {
@@ -774,7 +777,7 @@ div.report-comment-box {
 }
 
 div.comment-block {
-    padding:5px 0px; background:#F2F2F2;
+    padding:1em; background:#F2F2F2;
 }
 
 div.comment-block h5 {
@@ -783,8 +786,6 @@ div.comment-block h5 {
     font-size:14px;
     text-transform: capitalize;
 }
-
-div.comment-block form { padding:0 0 0 10px; }
 
 div.report-media-box-tabs { float:right;  }
 div.report-media-box-tabs ul { list-style: none; padding: 0; margin: 0; float:left; }
