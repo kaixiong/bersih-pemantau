@@ -688,6 +688,7 @@ div.report-details{
 
 .report-when-where { color:#908B88; margin-bottom:10px; }
 .report-when-where span { padding:3px 5px 3px 18px;  }
+.report-when-where span.r_person { padding-left: 0; }
 
 div.report-category-list {
     border-top:1px dotted #C0C2B8;

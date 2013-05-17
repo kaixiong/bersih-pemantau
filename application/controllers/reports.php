@@ -649,6 +649,10 @@ class Reports_Controller extends Main_Controller {
 			$this->template->content->incident_time = date('H:i', strtotime($incident->incident_date));
 			$this->template->content->incident_category = $incident->incident_category;
 
+			// Incident reporter
+			$this->template->content->person_first = $incident->incident_person->person_first;
+			$this->template->content->person_last  = $incident->incident_person->person_last;
+
 			// Incident rating
 			$this->template->content->incident_rating = $this->_get_rating($incident->id, 'original');
 
