@@ -49,9 +49,12 @@
 				<?php Event::run('ushahidi_action.report_form_optional'); ?>
 
 				<?php /* See: submit_custom_forms.php */ ?>
-				<?php $custom_fields_personal = array_filter($custom_forms->disp_custom_fields, function($f) {
-					return preg_match('/^NO.I.C/i', $f['field_name']) || preg_match('/^No.Tel/i', $f['field_name']);
-				}); ?>
+				<?php
+					function is_personal_field($f) {
+						return preg_match('/^NO.I.C/i', $f['field_name']) || preg_match('/^No.Tel/i', $f['field_name']);
+					}
+					$custom_fields_personal = array_filter($custom_forms->disp_custom_fields, 'is_personal_field');
+				?>
 				<?php foreach ($custom_fields_personal as $f): ?>
 					<div class="report_row">
 						<?php echo "<h4>" . '<span class="required">*</span>' . $f['field_name'] . "</h4>"; ?>
